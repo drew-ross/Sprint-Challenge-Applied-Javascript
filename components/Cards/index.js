@@ -18,3 +18,30 @@
 // </div>
 //
 // Use your function to create a card for each of the articles and add the card to the DOM.
+
+const cardsContainer = document.querySelector('.cards-container');
+
+const cardCreator = (data) => {
+    const card = document.createElement('div');
+    const headline = document.createElement('div');
+    const author = document.createElement('div');
+    const imgContainer = document.createElement('div');
+    const img = document.createElement('img');
+    const name = document.createElement('span');
+
+    card.classList.add('card');
+    headline.classList.add('headline');
+    author.classList.add('author');
+    imgContainer.classList.add('img-container');
+
+    headline.textContent = data.headline;
+    img.src = data.authorPhoto;
+    name.textContent = data.authorName;
+    
+    imgContainer.append(img);
+    author.append(imgContainer, name);
+    card.append(headline, author);
+
+    return card;
+}
+
