@@ -299,7 +299,12 @@ body {
   right: 25px;
   transform: translate(0, -50%);
 }
-.carousel img {
+.carousel .caro-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.carousel .caro-container img {
   width: 100%;
-  display: none;
 }
