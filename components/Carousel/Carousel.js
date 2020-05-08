@@ -20,12 +20,12 @@
 
 const carouselContainer = document.querySelector('.carousel-container');
 
-let position = 0;
+let position = 600;
 
 const moveLeft = () => {
-  if (position < 1800) {
-    gsap.to('.caro-container', { x: (position + 600) });
-    position += 600;
+  if (position <= 1200) {
+    gsap.to('.caro-container', { x: (position + 1200) });
+    position += 1200;
   } else {
     gsap.to('.caro-container', {x: - 1800});
     position = -1800;
@@ -33,9 +33,9 @@ const moveLeft = () => {
 }
 
 const moveRight = () => {
-  if (position > -1800) {
-    gsap.to('.caro-container', { x: (position - 600) });
-    position -= 600;
+  if (position >= -1200) {
+    gsap.to('.caro-container', { x: (position - 1200) });
+    position -= 1200;
   } else {
     gsap.to('.caro-container', {x: 1800});
     position = 1800
@@ -75,3 +75,4 @@ const createCarousel = () => {
 }
 
 carouselContainer.append(createCarousel());
+gsap.to('.caro-container', { x: 600 });
